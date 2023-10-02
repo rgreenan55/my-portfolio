@@ -1,1 +1,1 @@
-All images, stylings, etc can be found here.
+All images, stylings, etc. can be found here.
