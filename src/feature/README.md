@@ -1,0 +1,1 @@
+All components that are related to a specific purpose will be here. (User -> Profile, Avatar) (Message -> Item, List)
