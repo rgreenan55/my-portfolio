@@ -4,10 +4,16 @@ Note : Used [this](https://mrseanbaines.medium.com/how-to-write-a-minimal-react-
 ### Usage
 To use this, simply ```git clone``` this repository, then alter as needed.
 
+### File Changes
+- In [index.html](./src/index.html) adjust the title tag.
+- In [package.json](./package.json) adjust the name attribute.
+- In [package-lock.json](./package-lock.json) adjust the name attribute.
 
 ### Commonly Used Additions
 - [MaterialUI](https://mui.com/material-ui/getting-started/installation/)
 - [React Router](https://reactrouter.com/en/main/start/tutorial)
+
+### Once Setup - Delete Everything Above Here
 
 # Setup
 
@@ -16,7 +22,9 @@ To use this, simply ```git clone``` this repository, then alter as needed.
 
 If NodeJS / npm is not installed, download [here](https://nodejs.org/en/download/)
 
+
+
 # Tools
 
-### ReactJS -- Language of Choice
+### ReactJS
 https://reactjs.org/
