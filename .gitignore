@@ -1,0 +1,9 @@
+# Logs
+*.log
+
+# Dependency Directories
+node_modules
+
+# ENV
+# Remove the Comments here when starting new project! - do not want to include envs.
+# .env
