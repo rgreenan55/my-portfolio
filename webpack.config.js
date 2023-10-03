@@ -2,9 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devServer: {
-        port: 3000
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.html'),
@@ -16,5 +13,10 @@ module.exports = {
             exclude: /node_modules/,
             use: ['babel-loader'],
         }],
+    },
+    devServer: {
+        port: 3000,
+        open: true,
+        historyApiFallback: true,   // Allows React-Router to render pages properly
     },
 };
