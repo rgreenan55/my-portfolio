@@ -4,7 +4,18 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import MyRouter from './Router';
 
 const theme = createTheme({
-    
+    palette: {
+        type: 'light',
+        primary: {
+          main: '#473364',
+        },
+        secondary: {
+          main: '#000000',
+        },
+        error: {
+          main: '#af1d0f',
+        },
+      },
 })
 
 export default () => {

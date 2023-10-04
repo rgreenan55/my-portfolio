@@ -1,25 +1,29 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import AppBar from '@mui/material/AppBar';
-import { Box, Button, Toolbar, Typography } from '@mui/material';
+import TuneIcon from '@mui/icons-material/Tune';
+import { Box, Button, Divider, IconButton, Toolbar, Typography } from '@mui/material';
 
 const Navbar = () => {
-    const navItems = ['Home', 'About', 'Contact'];
-
+    const pages = ['Home', 'About', 'Work', 'Projects', 'Interests', 'Contact']
+    const navigate = useNavigate();
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position='fixed'>
                 <Toolbar>
-                    <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6">
                         Robert Greenan
                     </Typography>
                     <Box>
-                        {navItems.map(item => (
-                            <Button key={item} sx={{ color: 'white' }}>
-                                {item}
+                        {pages.map(page => (
+                            <Button key={page} sx={{ color: 'white' }} onClick={() => navigate(page)}>
+                                {page}
                             </Button>
                         ))}
                     </Box>
                 </Toolbar>
+
             </AppBar>
             <Toolbar /> {/* Prevents conent going under Toolbar*/}
         </Box>
