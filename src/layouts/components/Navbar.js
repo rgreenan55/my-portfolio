@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import AppBar from '@mui/material/AppBar';
-import { Box, Button, Divider, IconButton, Toolbar, Typography } from '@mui/material';
+import { Box, Button, Toolbar, Typography } from '@mui/material';
 
 const Navbar = () => {
     const pages = ['Home', 'About', 'Work', 'Projects', 'Interests', 'Contact']
