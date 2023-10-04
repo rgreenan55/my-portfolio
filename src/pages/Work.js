@@ -1,12 +1,15 @@
 import React from 'react';
+import WorkCard from '../feature/work/WorkCard';
+import jobs_data from '../config/job_data';
 
 const Work = () => {
-
     return (
         <>
-            Hello Work
+            {jobs_data.map(job => (
+                <WorkCard key={job.title} {...job} />
+            ))}
         </>
     )
 }
 
-export default Work;
+export default Work; 

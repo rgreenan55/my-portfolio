@@ -8,12 +8,13 @@ const MyRouter = () => {
     return (
         <Routes>
             <Route path='/' element={<MainLayout />}>
-                <Route index path='/Home' element={<Home />} />
-                <Route path='/About' element={<About />} />
-                <Route path='/Work' element={<Work />} />
-                <Route path='/Projects' element={<Projects />} />
-                <Route path='/Interests' element={<Interests />} />
-                <Route path='/Contact' element={<Contact />} />
+                <Route index element={<Home />} />
+                <Route path='/home' element={<Home />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/work' element={<Work />} />
+                <Route path='/projects' element={<Projects />} />
+                <Route path='/interests' element={<Interests />} />
+                <Route path='/contact' element={<Contact />} />
             </Route>
         </Routes>
     )
