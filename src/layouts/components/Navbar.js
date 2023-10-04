@@ -11,7 +11,7 @@ const Navbar = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position='fixed'>
                 <Toolbar>
-                    <Typography variant="h6">
+                    <Typography variant="h6" sx={{ flexGrow: 1 }}>
                         Robert Greenan
                     </Typography>
                     <Box>
