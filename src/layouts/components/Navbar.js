@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import AppBar from '@mui/material/AppBar';
-import TuneIcon from '@mui/icons-material/Tune';
 import { Box, Button, Divider, IconButton, Toolbar, Typography } from '@mui/material';
 
 const Navbar = () => {
