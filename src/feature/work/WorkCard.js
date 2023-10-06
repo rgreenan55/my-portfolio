@@ -27,7 +27,7 @@ const WorkCard = ({ title, dates, secondaryTitle, description, links, tags }) =>
                                 ))}
                             </Grid>
                             <Grid xs={8}>
-                                <Typography color={isHovered ? 'primary' : 'text.secondary'}>
+                                <Typography color={isHovered ? 'primary' : 'text.secondary'} sx={{ textDecoration: isHovered ? 'underline' : '',}}>
                                     {title}
                                 </Typography>
                                 <Typography variant='caption' color='text.secondary'>
