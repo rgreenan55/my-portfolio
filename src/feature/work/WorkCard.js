@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Button, Card, CardActionArea, CardContent, Chip, Grid, Link, Stack, Typography } from '@mui/material';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Box, Card, CardActionArea, CardContent, Chip, Grid, Link, Stack, Typography } from '@mui/material';
+import WorkLinkButton from './WorkLinkButton.js';
 
-const WorkCard = ({ title, dates, secondaryTitle, description, links, tags }) => {
+const WorkCard = ({ title, link, dates, subtitle, description, links, tags }) => {
     const [isHovered, setIsHovered] = React.useState(false);
 
     const handleMouseOver = () => { setIsHovered(true) }
@@ -15,38 +15,37 @@ const WorkCard = ({ title, dates, secondaryTitle, description, links, tags }) =>
                 <CardActionArea
                     onMouseOver={handleMouseOver}
                     onMouseOut={handleMouseOut}
+                    onClick={() => window.open(link, '_blank')}
                     disableRipple
                 >
                     <CardContent>
                         <Grid container>
-                            <Grid xs={4}>
+                            <Grid item xs={4}>
                                 {dates.map(date => (
-                                    <Typography variant='body2' color='text.secondary'>
+                                    <Typography key={date} variant='body2' color='text.secondary'>
                                         {date}
                                     </Typography>
                                 ))}
                             </Grid>
-                            <Grid xs={8}>
+                            <Grid item xs={8}>
                                 <Typography color={isHovered ? 'primary' : 'text.secondary'} sx={{ textDecoration: isHovered ? 'underline' : '',}}>
                                     {title}
                                 </Typography>
+
                                 <Typography variant='caption' color='text.secondary'>
-                                    {secondaryTitle}
+                                    {subtitle}
                                 </Typography>
-                                <Typography variant='body2' mb='8px'>
+
+                                <Typography variant='body2' mb={2.5}>
                                     {description}
                                 </Typography>
-                                {links && <Stack direction='row' spacing={0.5} useFlexGap flexWrap='wrap'>
-                                    {links.map(link => (
-                                        <Button key={link.link} size='small' target='_blank' href={link.link} startIcon={<OpenInNewIcon fontSize='small' />} sx={{ textTransform: 'none'}}>
-                                            {link.title}
-                                        </Button>
-                                    ))}
+
+                                {links && <Stack direction='row' spacing={1} useFlexGap flexWrap='wrap'>
+                                    {links.map(link => <WorkLinkButton {...link} />)}
                                 </Stack>}
-                                {tags && <Stack direction='row' spacing={0.5} useFlexGap flexWrap='wrap'>
-                                    {tags.map(tag => (
-                                        <Chip key={tag} label={tag} size='small' color='primary' variant='outlined' />
-                                    ))}
+
+                                {tags && <Stack direction='row' spacing={0.5} useFlexGap flexWrap='wrap' mt={1}>
+                                    {tags.map(tag => <Chip key={tag} label={tag} size='small' color='primary' variant='outlined' />)}
                                 </Stack>}
                             </Grid>
                         </Grid>
@@ -59,8 +58,9 @@ const WorkCard = ({ title, dates, secondaryTitle, description, links, tags }) =>
 
 WorkCard.propTypes = {
     title: PropTypes.string.isRequired,
+    link: PropTypes.string, // Required?
     dates: PropTypes.arrayOf(PropTypes.string).isRequired,
-    role: PropTypes.string.isRequired,
+    role: PropTypes.string,
     description: PropTypes.string.isRequired,
     links: PropTypes.arrayOf(PropTypes.object),
     tags: PropTypes.arrayOf(PropTypes.string),
