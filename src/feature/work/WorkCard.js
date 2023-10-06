@@ -10,7 +10,7 @@ const WorkCard = ({ title, dates, secondaryTitle, description, links, tags }) =>
     const handleMouseOut = () => { setIsHovered(false)}
 
     return (
-        <Box m='12px' width='600px'>
+        <Box>
             <Card>
                 <CardActionArea
                     onMouseOver={handleMouseOver}
