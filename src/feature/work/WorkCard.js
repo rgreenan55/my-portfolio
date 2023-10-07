@@ -36,9 +36,9 @@ const WorkCard = ({ title, link, dates, subtitle, description, links, tags }) =>
                                     {subtitle}
                                 </Typography>
 
-                                <Typography variant='body2' mb={2.5}>
-                                    {description}
-                                </Typography>
+                                {description.split('<br/>').map(paragraph => (
+                                    <Typography variant='body2' mb={2.5}> {paragraph} </Typography>
+                                ))}
 
                                 {links && <Stack direction='row' spacing={1} useFlexGap flexWrap='wrap'>
                                     {links.map(link => <WorkLinkButton {...link} />)}
