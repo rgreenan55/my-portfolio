@@ -8,8 +8,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Socials = ({ size }) => {
     const Icons = [
-        { icon: <GitHubIcon /> , link: 'https://github.com/rgreenan55'},
-        { icon: <LinkedInIcon />, link: 'https://www.linkedin.com/in/robert-greenan/'},
+        { icon: <GitHubIcon fontSize={size} /> , link: 'https://github.com/rgreenan55'},
+        { icon: <LinkedInIcon fontSize={size} />, link: 'https://www.linkedin.com/in/robert-greenan/'},
     ]
 
     return (
@@ -30,7 +30,7 @@ const Socials = ({ size }) => {
 }
 
 Socials.defaultProps ={
-    size: 'medium',
+    size: 'large',
 }
 
 Socials.propTypes = {
