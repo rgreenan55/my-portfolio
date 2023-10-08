@@ -1,1 +1,0 @@
-All custom hooks can be found here.

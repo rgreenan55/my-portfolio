@@ -5,7 +5,7 @@ import AppBar from '@mui/material/AppBar';
 import { Box, Button, Toolbar, Typography } from '@mui/material';
 
 const Navbar = () => {
-    const pages = ['home', 'about', 'work', 'projects', 'interests', 'contact']
+    const pages = ['home', 'about', 'work', 'projects', 'contact']
     const navigate = useNavigate();
     return (
         <Box sx={{ flexGrow: 1 }}>
