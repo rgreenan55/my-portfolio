@@ -13,18 +13,17 @@ const Home = () => {
         <PageAnimation>
             <Grid container justifyContent='center' alignItems='center' pt='15%'>
                 <Stack spacing={4}>
-                    <motion.div animate={{ scale: [1, 2, 1]}} transition={{ delay: 0.5 }}>
-                        <Typography variant='h2' align='center'> Welcome </Typography>
-                    </motion.div>
-                    <motion.div>
-                        <Typography variant='h4' align='center'> My name is Robert</Typography>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.25 }}>
+                    <Typography variant='h2' align='center'> Welcome </Typography>
+                    <Typography variant='h4' align='center'> My name is Robert</Typography>
+                    
+                    <motion.div animate={{ rotate: [0, 5, -5, 0] }}  transition={{ repeat: Infinity, repeatDelay: 1 }}>
+                        <motion.div whileHover={{ scale: 1.25 }}>
                         <Box display='flex' justifyContent='center'>
                             <Button variant='contained' size='large' endIcon={<EastIcon />} onClick={() => navigate('/about')}>
                                 About Me
                             </Button>
                         </Box>
+                        </motion.div>
                     </motion.div>
                 </Stack>
             </Grid>
