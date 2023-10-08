@@ -6,7 +6,7 @@ import Socials from '../components/Socials';
 import jobs_data from '../config/job_data';
 
 import ResumePDF from '../assets/Resume.pdf';
-import Figure from '../assets/figure.png';
+import Figure from '../assets/images/figure.png';
 
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import EastIcon from '@mui/icons-material/East';
@@ -29,7 +29,7 @@ const Work = () => {
                         </Box>
                         <Box
                             component='img'
-                            sx={{ width: '25%' }}
+                            sx={{ width: '25%', minWidth: '125px' }}
                             alt=''
                             src={Figure}
                         />
