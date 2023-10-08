@@ -1,11 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { motion } from 'framer-motion';
+
 import Navbar from './components/Navbar.js';
+import MouseTrail from './MouseTrail.js';
+
+import useIsMobile from '../hooks/useIsMobile.js';
 
 const MainLayout = () => {
+    const isMobile = useIsMobile();
+
     return (
         <>
+            {!isMobile && <MouseTrail />}
             <Navbar />
             <Outlet />
         </>

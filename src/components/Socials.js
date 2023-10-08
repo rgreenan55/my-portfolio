@@ -14,10 +14,9 @@ const Socials = ({ size }) => {
 
     return (
         <Stack direction='row' gap={1} divider={<Divider orientation='vertical' flexItem />}>
-            {Icons.map(icon => (
-                <motion.div whileHover={{ scale: 1.2 }}>
+            {Icons.map((icon,i) => (
+                <motion.div key={i} whileHover={{ scale: 1.2 }}>
                     <IconButton
-                        key={icon.link}
                         onClick={() => window.open(icon.link, '_blank')}
                         size={size}
                         color='secondary'

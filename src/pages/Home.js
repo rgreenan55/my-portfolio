@@ -4,7 +4,7 @@ import PageAnimation from './PageAnimation.js';
 const Home = () => {
 
     return (
-        <PageAnimation> 
+        <PageAnimation>
             Hello Home
         </PageAnimation>
     )
