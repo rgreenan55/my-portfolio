@@ -7,12 +7,13 @@ import MouseTrail from './MouseTrail.js';
 import useIsMobile from '../hooks/useIsMobile.js';
 
 const MainLayout = () => {
+    const [mouseTrail, setMouseTrail] = React.useState(true);
     const isMobile = useIsMobile();
 
     return (
         <>
-            {!isMobile && <MouseTrail />}
-            <Navbar />
+            {!isMobile && mouseTrail && <MouseTrail />}
+            <Navbar setMouseTrail={setMouseTrail} />
             <Outlet />
         </>
     )
