@@ -7,7 +7,8 @@ import MouseTrail from './MouseTrail.js';
 import useIsMobile from '../hooks/useIsMobile.js';
 
 const MainLayout = () => {
-    const [mouseTrail, setMouseTrail] = React.useState(true);
+    {/* FIXME: Mouse Trail resetting to True on page change */}
+    const [mouseTrail, setMouseTrail] = React.useState(false);
     const isMobile = useIsMobile();
 
     return (

@@ -17,14 +17,13 @@ const Work = () => {
     return (
         <PageAnimation>
             <Grid container p={12} spacing={2}>
-                <Grid item xs={5} position='fixed'>
-                    <Stack spacing={12}>
+                <Grid item xs={5} position='fixed' height='70%'> {/* TODO: Figure out height */}
+                    <Stack justifyContent='space-between' height='100%'>
                         <Box width='50%' minWidth='325px'>
                             <Typography variant='h3'> Robert Greenan </Typography>
                             <Typography variant='subtitle1'> Student at the University of New Brunswick </Typography>
                             <Typography variant='body1' mt={2}>
-                                I'm a developer with a deep passion and desire to continuously expand my knowlede base
-                                in both the field of Software Engineering as well as Life itself.
+                                I'm a developer with a deep passion and desire to continuously expand my knowledgebase in both the field of Software Engineering as well as Life itself.
                             </Typography>
                         </Box>
                         <Box
