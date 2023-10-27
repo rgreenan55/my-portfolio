@@ -1,11 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 
-import { AppBar, Box, Button, Switch, Toolbar, Typography } from '@mui/material';
-import NearMeIcon from '@mui/icons-material/NearMe';
-import NearMeDisabledIcon from '@mui/icons-material/NearMeDisabled';
-
-const Navbar = ({ setMouseTrail }) => {
+const Navbar = () => {
     const pages = ['home', 'about', 'work', 'projects', 'contact']
     const navigate = useNavigate();
 
@@ -17,14 +14,6 @@ const Navbar = ({ setMouseTrail }) => {
                         <Typography variant="h6">
                             Robert Greenan
                         </Typography>
-                        <Switch
-                            defaultChecked
-                            label='Mouse Trail'
-                            onChange={e => setMouseTrail(e.target.checked)}
-                            icon={<NearMeDisabledIcon sx={{ borderRadius: '5px', backgroundColor: 'black' }} />}
-                            checkedIcon={<NearMeIcon sx={{ borderRadius: '5px', backgroundColor: 'black' }} />}
-                            color='default'
-                        />
                     </Box>
                     <Box>
                         {pages.map(page => (
