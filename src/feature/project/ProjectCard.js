@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LayoutGroup, motion, stagger } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-import { Box, Card, CardActionArea, CardContent, Collapse, Divider, Grid, Hidden, IconButton, Item, Paper, Typography } from '@mui/material';
+import { Box, Button, Card, CardActionArea, CardContent, Collapse, Divider, Grid, Paper, Stack, Typography } from '@mui/material';
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
-
-// TODO: Make my own Carousel Component - Then remove this.
-import Carousel from 'react-material-ui-carousel';
-import Figure from '../../assets/images/figure.png'
+import { TypeAnimation } from 'react-type-animation';
 
 const ProjectCard = ({ title, description }) => {
+    const [isActivated, setIsActivated] = React.useState(false);
     const [isSelected, setIsSelected] = React.useState(false);
     const [open, setOpen] = React.useState(false);
 
@@ -18,10 +16,15 @@ const ProjectCard = ({ title, description }) => {
         if (isSelected) {
             const timer = setTimeout(() => {
                 setOpen(true);
-            }, 500)
+            }, 500);
             return () => clearTimeout(timer);
         } else {
             setOpen(false);
+
+            const timer = setTimeout(() => {
+                setIsActivated(false);
+            }, 500);
+            return () => clearTimeout(timer);
         }
     }, [isSelected])
 
@@ -33,33 +36,58 @@ const ProjectCard = ({ title, description }) => {
             transition={{ width: { duration: 0.5, delay: open ? '0.5' : '' } }}
             layout='position'
         >
-            <CardActionArea
-                onClick={() => {setIsSelected(!isSelected)}}
-                disableRipple
-            >
+            {/* Title of Project */}
+            <CardActionArea onClick={() => {setIsSelected(!isSelected)}} disableRipple>
                 <CardContent>
                     <Box display='flex' justifyContent='space-between'>
-                        <Typography fontSize='32px'> {title} </Typography>
+                        <Typography variant='h5'> {title} </Typography>
                         {isSelected ? <CloseFullscreenIcon /> : <OpenInFullIcon /> }
                     </Box>
                 </CardContent>
-                <Collapse in={open} timeout={750}>
-                    <Divider variant='middle' sx={{ backgroundColor: 'black' }} />
-                    <CardContent>
-                        <Typography> {description} </Typography>
-                        <ImageItem />
-                    </CardContent>
-                </Collapse>
             </CardActionArea>
-        </Card>
-    )
-}
 
-const ImageItem = ({ name, image }) => {
-    return (
-        <Paper align='center'>
-            <Box component='img' alt='' src={Figure} />
-        </Paper>
+            <Collapse in={open} timeout={750} unmountOnExit>
+                <Divider variant='middle' sx={{ backgroundColor: 'black' }} />
+                <CardContent>
+                    <Grid container spacing={2} height='50vh'>
+                        
+                        {/* Tags, Links, Etc */}
+                        <Grid item xs={3} height={1}>
+                            <Box component={Paper} height={0.9} padding='16px' backgroundColor='#1f1f1f' style={{ whiteSpace: 'pre-line', fontFamily: 'monospace', color: 'white' }}>
+                                {title}
+                                <Divider sx={{ backgroundColor: 'white', mb: '16px' }} />
+                                Tags{'\n'}
+                                {['a', 'b', 'c', 'd'].map(tag => ('____' + tag + '\n'))}
+                                {'\n'}
+                                Links{'\n'}
+                                {['a', 'b', 'c', 'd'].map(tag => ('____' + tag + '\n'))}
+                            </Box>
+                        </Grid>
+
+                        {/* Description + Demo? */}
+                        <Grid item xs={9} height={0.9}>
+                            <Box component={Paper} height={1} padding='16px' backgroundColor='#1f1f1f'>
+                                {isActivated ? (
+                                    <TypeAnimation
+                                        style={{ whiteSpace: 'pre-line', fontFamily: 'monospace', color: 'white' }}
+                                        sequence={[
+                                            `Line One\nLine Two\nLine Three\nLine Four\nLine Five`
+                                        ]}
+                                    />
+                                ) : (
+                                    <Box height='100%' width='100%' display='flex' justifyContent='center' alignItems='center'>
+                                        <Button variant='contained' onClick={() => setIsActivated(true)} size='large'>
+                                            Activate
+                                        </Button>
+                                    </Box>
+                                )
+                                }
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </CardContent>
+            </Collapse>
+        </Card>
     )
 }
 
