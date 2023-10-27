@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 const PageAnimation = ({ children }) => {
     return (
         <motion.div
-            className='page_animation'
             initial={{ y: -20, opacity: 0 }}
             animate={{
                 y: 0,

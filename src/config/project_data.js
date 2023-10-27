@@ -1,27 +1,27 @@
 const project_data = [
     {
-        title: 'Title1',
+        title: 'Project of Projecting',
         description: 'Description',
         links: [{ title: '', link: '' }],
         tags: ['', '', ''],
         pictures: [],
     },
     {
-        title: 'Title2',
+        title: 'Mobile App that is Mobile',
         description: 'Description',
         links: [{ title: '', link: '' }],
         tags: ['', '', ''],
         pictures: [],
     },
     {
-        title: 'Title3',
+        title: 'Game of Game Town',
         description: 'Description',
         links: [{ title: '', link: '' }],
         tags: ['', '', ''],
         pictures: [],
     },
     {
-        title: 'Title4',
+        title: 'Website of Websitington',
         description: 'Description',
         links: [{ title: '', link: '' }],
         tags: ['', '', ''],

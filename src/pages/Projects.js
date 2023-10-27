@@ -11,10 +11,8 @@ const Projects = () => {
             <Grid container p={4}>
                 <Stack spacing={5} width='100%'>
                     {project_data.map((project, i) => (
-                        <Box key={project.title} width='100%' sx={i%2 == 1 && { display: 'flex', justifyContent: 'flex-end'}}>
-                            <Box width='75%' justifySelf='flex-end'>
-                                <ProjectCard {...project} />
-                            </Box>
+                        <Box key={project.title} width='100%'>
+                            <ProjectCard {...project} />
                         </Box>
                     ))}
                 </Stack>
