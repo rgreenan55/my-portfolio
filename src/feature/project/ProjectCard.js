@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
-import { Box, Button, Card, CardActionArea, CardContent, Collapse, Divider, Grid, Paper, Stack, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, Collapse, Divider, Grid, Typography } from '@mui/material';
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
-import { TypeAnimation } from 'react-type-animation';
+import ProjectCardSideBar from './ProjectCardSideBar';
+import ProjectCardDescription from './ProjectCardDescription';
 
-const ProjectCard = ({ title, description }) => {
-    const [isActivated, setIsActivated] = React.useState(false);
+const ProjectCard = ({ title, description, links, tags }) => {
     const [isSelected, setIsSelected] = React.useState(false);
     const [open, setOpen] = React.useState(false);
 
@@ -20,11 +20,6 @@ const ProjectCard = ({ title, description }) => {
             return () => clearTimeout(timer);
         } else {
             setOpen(false);
-
-            const timer = setTimeout(() => {
-                setIsActivated(false);
-            }, 500);
-            return () => clearTimeout(timer);
         }
     }, [isSelected])
 
@@ -53,36 +48,12 @@ const ProjectCard = ({ title, description }) => {
                         
                         {/* Tags, Links, Etc */}
                         <Grid item xs={3} height={1}>
-                            <Box component={Paper} height={0.9} padding='16px' backgroundColor='#1f1f1f' style={{ whiteSpace: 'pre-line', fontFamily: 'monospace', color: 'white' }}>
-                                {title}
-                                <Divider sx={{ backgroundColor: 'white', mb: '16px' }} />
-                                Tags{'\n'}
-                                {['a', 'b', 'c', 'd'].map(tag => ('____' + tag + '\n'))}
-                                {'\n'}
-                                Links{'\n'}
-                                {['a', 'b', 'c', 'd'].map(tag => ('____' + tag + '\n'))}
-                            </Box>
+                            <ProjectCardSideBar title={title} links={links} tags={tags} />
                         </Grid>
 
                         {/* Description + Demo? */}
                         <Grid item xs={9} height={0.9}>
-                            <Box component={Paper} height={1} padding='16px' backgroundColor='#1f1f1f'>
-                                {isActivated ? (
-                                    <TypeAnimation
-                                        style={{ whiteSpace: 'pre-line', fontFamily: 'monospace', color: 'white' }}
-                                        sequence={[
-                                            `Line One\nLine Two\nLine Three\nLine Four\nLine Five`
-                                        ]}
-                                    />
-                                ) : (
-                                    <Box height='100%' width='100%' display='flex' justifyContent='center' alignItems='center'>
-                                        <Button variant='contained' onClick={() => setIsActivated(true)} size='large'>
-                                            Activate
-                                        </Button>
-                                    </Box>
-                                )
-                                }
-                            </Box>
+                            <ProjectCardDescription description={description} />
                         </Grid>
                     </Grid>
                 </CardContent>
@@ -93,8 +64,9 @@ const ProjectCard = ({ title, description }) => {
 
 ProjectCard.propTypes = {
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-
+    description: PropTypes.array.isRequired,
+    links: PropTypes.array,
+    tags: PropTypes.array,
 }
 
 export default ProjectCard;
