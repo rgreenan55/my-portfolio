@@ -21,8 +21,8 @@ const project_data = [
             `}` + '\n'
         ],
         links: [
-            { title: 'git_app_ui', link: 'https://github.com/Steam-Application/steam-app' },
-            { title: 'git_app_api', link: 'https://github.com/Steam-Application/steam-app-api' },
+            { title: 'github_ui', link: 'https://github.com/Steam-Application/steam-app' },
+            { title: 'github_api', link: 'https://github.com/Steam-Application/steam-app-api' },
             { title: 'steam_api', link: 'https://partner.steamgames.com/doc/api' },
             { title: 'material_ui', link: 'https://mui.com/material-ui/' }
         ],
