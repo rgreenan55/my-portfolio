@@ -19,7 +19,7 @@ const ProjectCardDescription = ({ description }) => {
             {isActivated ?(
                 <Box position='relative' display='flex' height='100%' width='100%'>
                     <TypeAnimation
-                        style={{ whiteSpace: 'pre-line', fontFamily: 'monospace', color: 'white' }}
+                        style={{ whiteSpace: 'pre-line', fontFamily: 'monospace', color: 'white', width: '60%' }}
                         sequence={description}
                         speed={75}
                     />
@@ -39,7 +39,7 @@ const ProjectCardDescription = ({ description }) => {
                             {isOpen ? (
                                 <IconButton onClick={() => setIsOpen(false)}> <ArrowBackIcon /> </IconButton>
                             ) : (
-                                <Box component="img" src={Image} height={1} width={1} />
+                                <Box onClick={() => setIsOpen(true)} component="img" src={Image} height={1} width={1} />
                             )}
                         </Box>
                     </Box>
