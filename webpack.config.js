@@ -31,4 +31,9 @@ module.exports = {
         open: true,
         historyApiFallback: true,   // Allows React-Router to render pages properly
     },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    }
 };
