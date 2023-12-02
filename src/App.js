@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import MyRouter from './Router';
@@ -27,9 +27,9 @@ const theme = createTheme({
 const App = () => {
     return (
         <ThemeProvider theme={theme}>
-            <HashRouter basename={process.env.PUBLIC_URL}>
+            <BrowserRouter>
                 <MyRouter />
-            </HashRouter>
+            </BrowserRouter>
         </ThemeProvider>
     );
 }
