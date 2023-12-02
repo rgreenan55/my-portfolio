@@ -7,5 +7,4 @@ node_modules
 dist
 
 # ENV
-# Remove the Comments here when starting new project! - do not want to include envs.
-# .env
+.env

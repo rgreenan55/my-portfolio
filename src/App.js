@@ -27,7 +27,7 @@ const theme = createTheme({
 const App = () => {
     return (
         <ThemeProvider theme={theme}>
-            <HashRouter>
+            <HashRouter basename={process.env.PUBLIC_URL}>
                 <MyRouter />
             </HashRouter>
         </ThemeProvider>

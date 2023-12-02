@@ -1,6 +1,6 @@
 {
-    "name": "robert-greenan-portfolio",
     "homepage": "https://github.com/rgreenan55/my-portfolio",
+    "name": "robert-greenan-portfolio",
     "version": "1.0.0",
     "description": "",
     "main": "src/index.js",
