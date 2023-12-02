@@ -7,6 +7,8 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 // FIXME: Animate Colors Warning
 const ProjectCardSideBar = ({ title, links, tags }) => {
+
+
     return (
         <Box
             component={Paper}
@@ -19,20 +21,26 @@ const ProjectCardSideBar = ({ title, links, tags }) => {
             {title}
             <Divider sx={{ backgroundColor: 'white' }} />
 
-
             {'\n'}  Links  {'\n'}
             {links.map(link => (
-                <motion.div key={link.title} whileHover={{ x: 10, scale: 1.1, color: 'blueviolet' }} onClick={() => window.open(link.link, '_blank')} style={{ marginBottom: '2px' }}>
+                <motion.div
+                    key={link.title}
+                    whileHover={{ x: 10, scale: 1.1, color: '#8A2BE2' /* blueviolet */, cursor: 'pointer' }}
+                    onClick={() => window.open(link.link, '_blank')}
+                    style={{ marginBottom: '2px' }}
+                >
                     {'____ ' + link.title}
                     <OpenInNewIcon fontSize='1' />
                     {'\n'}
                 </motion.div>
             ))}
 
-
             {'\n'}  Tags  {'\n'}
             {tags.map(tag => (
-                <motion.div key={tag} whileHover={{ x: 10, scale: 1.1, color: 'grey' }} style={{ marginBottom: '2px' }}>
+                <motion.div
+                    key={tag} whileHover={{ x: 10, scale: 1.1, color: '#808080', cursor: 'default' }}
+                    style={{ marginBottom: '2px' }}
+                >
                     {'____ ' + tag + '\n'}
                 </motion.div>
             ))}                                

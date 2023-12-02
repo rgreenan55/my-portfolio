@@ -35,7 +35,7 @@ const Work = () => {
                         <Box>
                             <TextWithIcon
                                 text='View Full Resume'
-                                textAnimate={{ animate: { scale: 1.075 }}}
+                                textAnimate={{ animate: { scale: 1.075, cursor: 'pointer' }}}
                                 icon={<EastIcon fontSize='small' />}
                                 iconAnimate={{initial: { x: -5, opacity: 0 }, animate: { x: 10, opacity: 1 }}}
                                 onClick={() => window.open(ResumePDF)}

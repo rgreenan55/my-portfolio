@@ -1,30 +1,58 @@
 const project_data = [
     {
-        title: 'Steam Profile Viewing App',
+        title: 'My Portfolio Website',
         description: [
-            `class SteamApp {` + '\n\n' +
-            
-            `constructor() {` + '\n' +
-            '\xa0\xa0' + `this.type = 'web application';` + '\n' +
-            '\xa0\xa0' + `this.purpose = 'personal experience';` + '\n' +
-            '\xa0\xa0' + `this.dateCreated = 'september 2022';` + '\n' +
-            `}` + '\n\n' +
+            `class SteamApp {
 
-            `getDescription() {` + '\n' +
-            '\xa0\xa0' + `String description = \`` + '\n' +
-            '\xa0\xa0\xa0' + `A web application built to interact with the public Steam API` + '\n' +
-            '\xa0\xa0\xa0' + `in order to extract profile data and display it in a desired` + '\n' +
-            '\xa0\xa0\xa0' + `format which draws attention to achievements within steam games.` + '\n' +
-            '\xa0\xa0' + `\`;` + '\n\n' +
-            '\xa0\xa0' + `return description;` + '\n' +
-            `}` + '\n\n' +
-            `}` + '\n'
+            _constructor() {
+            __this.type = 'web application';
+            __this.purpose = 'personal experience';
+            __this.dateStarted = 'september 2022';
+            _} 
+
+            _getDescription() {
+            __String description = \`
+            ___A web application built to interact with the public Steam API
+            ___in order to extract profile data and display it in a desired
+            ___format which draws attention to achievements within steam games.
+            __\`;
+
+            __return description;
+            _}
+            }`.replaceAll('_', '\xa0\xa0')
+        ],
+        links: [
+            { title: 'github', link: 'https://github.com/rgreenan55/my-portfolio' },
+        ],
+        tags: ['react', 'javascript', 'html', 'css'],
+        pictures: [],
+    },
+    {
+        title: 'Steam Profile Viewing Website',
+        description: [
+            `class SteamApp {
+
+            _constructor() {
+            __this.type = 'web application';
+            __this.purpose = 'personal experience';
+            __this.dateStarted = 'september 2022';
+            _} 
+
+            _getDescription() {
+            __String description = \`
+            ___A web application built to interact with the public Steam API
+            ___in order to extract profile data and display it in a desired
+            ___format which draws attention to achievements within steam games.
+            __\`;
+
+            __return description;
+            _}
+            }`.replaceAll('_', '\xa0\xa0')
         ],
         links: [
             { title: 'github_ui', link: 'https://github.com/Steam-Application/steam-app' },
             { title: 'github_api', link: 'https://github.com/Steam-Application/steam-app-api' },
             { title: 'steam_api', link: 'https://partner.steamgames.com/doc/api' },
-            { title: 'material_ui', link: 'https://mui.com/material-ui/' }
         ],
         tags: ['react', 'javascript', 'html', 'css'],
         pictures: [],

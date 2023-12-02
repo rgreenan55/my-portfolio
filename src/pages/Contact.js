@@ -5,7 +5,7 @@ const Contact = () => {
 
     return (
         <PageAnimation> 
-            Hello Contact
+            Work In Progress
         </PageAnimation>
     )
 }

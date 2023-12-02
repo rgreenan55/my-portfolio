@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { TypeAnimation } from 'react-type-animation';
 import { Box, Button, IconButton, Paper } from '@mui/material';
-import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import { motion } from 'framer-motion';
@@ -19,13 +18,15 @@ const ProjectCardDescription = ({ description }) => {
             {isActivated ?(
                 <Box position='relative' display='flex' height='100%' width='100%'>
                     <TypeAnimation
-                        style={{ whiteSpace: 'pre-line', fontFamily: 'monospace', color: 'white', width: '60%' }}
+                        style={{ whiteSpace: 'pre-line', fontFamily: 'monospace', color: 'white' }}
                         sequence={description}
                         speed={75}
                     />
+                    {/*
                     <Box 
                         component={motion.div}
                         initial={{ y: -50, opacity: 0, width: '40%', height: '50%' }}
+                        whileHover={{ cursor: isOpen ? 'default' : 'nwse-resize' }}
                         animate={{ 
                             y: 0, opacity: 1, 
                             width: isOpen ? '100%' : '40%',
@@ -42,7 +43,7 @@ const ProjectCardDescription = ({ description }) => {
                                 <Box onClick={() => setIsOpen(true)} component="img" src={Image} height={1} width={1} />
                             )}
                         </Box>
-                    </Box>
+                    </Box>*/}
                 </Box>
             ):(
                 <Box height='100%' width='100%' display='flex' justifyContent='center' alignItems='center'>

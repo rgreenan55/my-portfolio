@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 
 const Navbar = () => {
-    const pages = ['home', 'about', 'work', 'projects', 'contact']
+    const pages = ['home', 'about', 'work', 'projects', /*'contact'*/]
     const navigate = useNavigate();
 
     return (
